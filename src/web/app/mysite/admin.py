@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin import SimpleListFilter
-import site.models as models
+import mysite.models as models
 
 # Register your models here.
 

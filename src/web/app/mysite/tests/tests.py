@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.core import management
 
-import site.models as models
+import mysite.models as models
 
 class LoginRedirect(TestCase):
 

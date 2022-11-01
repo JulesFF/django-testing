@@ -76,7 +76,7 @@ INSTALLED_APPS = [
     'fontawesome_5',
     'fontawesomefree',
     'crispy_forms',
-    'site',
+    'mysite',
 ]
 
 MIDDLEWARE = [
@@ -218,12 +218,12 @@ BOOTSTRAP4 = {
     # The complete URL to the Bootstrap CSS file
     # NOTE: we want to load local JS and CSS.
     "css_url": {
-        "href": StaticWrapper('site/theme/office-white/bootstrap.min.css'),
+        "href": StaticWrapper('mysite/theme/office-white/bootstrap.min.css'),
     },
 
     # The complete URL to the Bootstrap JavaScript file
     "javascript_url": {
-        "url": StaticWrapper('site/lib/bootstrap/js/bootstrap.bundle.min.js'),
+        "url": StaticWrapper('mysite/lib/bootstrap/js/bootstrap.bundle.min.js'),
     },
 
     # The complete URL to the Bootstrap CSS file (None means no theme)
@@ -231,17 +231,17 @@ BOOTSTRAP4 = {
 
     # The URL to the jQuery JavaScript file (full)
     "jquery_url": {
-        "url": StaticWrapper('site/lib/jquery/jquery.min.js'),
+        "url": StaticWrapper('mysite/lib/jquery/jquery.min.js'),
     },
 
     # The URL to the jQuery JavaScript file (slim)
     "jquery_slim_url": {
-        "url": StaticWrapper('site/lib/jquery/jquery.slim.min.js'),
+        "url": StaticWrapper('mysite/lib/jquery/jquery.slim.min.js'),
     },
 
     # The URL to the Popper.js JavaScript file (slim)
     "popper_url": {
-        "url": StaticWrapper('site/lib/popper/popper.min.js'),
+        "url": StaticWrapper('mysite/lib/popper/popper.min.js'),
     },
 
     # Put JavaScript in the HEAD section of the HTML document (only relevant if you use bootstrap4.html)

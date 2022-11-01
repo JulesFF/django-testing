@@ -1,8 +1,8 @@
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
-from django import forms
+# from django import forms
 
-import site.models as models
+import mysite.models as models
 
 class SiteLoginForm(AuthenticationForm):
     def __init__(self, request=None, *args, **kwargs):

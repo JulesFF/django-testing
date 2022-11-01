@@ -7,3 +7,4 @@ pip-licenses
 # for code quality checks
 radon
 flake8
+coverage==6.5.0

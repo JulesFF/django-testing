@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from site import views
+from mysite import views
 
 
 urlpatterns = [
@@ -29,7 +29,4 @@ urlpatterns = [
           views.AccessDenied.as_view(),
           name='access-denied'),
 
-     path('err_403/',
-          views.Error403.as_view(),
-          name='err_403'),
 ]

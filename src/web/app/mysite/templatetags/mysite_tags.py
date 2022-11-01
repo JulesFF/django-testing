@@ -62,7 +62,7 @@ def help_page(context):
     request = context['request']
     url_name = request.resolver_match.url_name
 
-    base_route = '/static/site/help/sum/user'
+    base_route = '/static/mysite/help/sum/user'
     page = 'index.html'
 
     # this dictionary consists of the url_names as given by the name field
@@ -90,7 +90,7 @@ def admin_help_page(context):
     request = context['request']
     url_name = request.resolver_match.url_name
 
-    base_route = '/static/site/help/adm/admin'
+    base_route = '/static/mysite/help/adm/admin'
     page = 'index.html'
 
     # this dictionary consists of the url_names as given by the name field

@@ -16,7 +16,7 @@
     <div class="container pt-3">
         <div class="jumbotron">
             <h1 class="display-3">Welcome {% if user.first_name or user.last_name %} {{ user.first_name }} {{user.last_name}} {% else %} {{user.get_username }} {% endif %}</h1>
-            <p>:)</p>
+            <p></p>
             <small class="text-muted">Profile : {{ profile.user }}</small>
             <small class="text-muted"> | Last login: {{ user.last_login }}</small>
             <small class="text-muted"> | Registered: {{ user.date_joined }}</small>

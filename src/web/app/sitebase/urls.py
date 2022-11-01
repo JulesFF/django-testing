@@ -23,9 +23,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('', include('site.urls')),]
+    path('', include('mysite.urls')),]
     # TODO: add api app
-    # path('api/', include('site_apis.urls'))
+    # path('api/', include('mysite_apis.urls'))
 
 
 if bool(settings.DEBUG):
