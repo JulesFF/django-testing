@@ -165,7 +165,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # URL for redirection from login if no next page provided
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'projects'
+LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = ''
 
 # Internationalization

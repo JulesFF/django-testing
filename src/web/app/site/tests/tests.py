@@ -12,7 +12,7 @@ class LoginRedirect(TestCase):
     @classmethod
     def setUpTestData(cls):
         # Set up non-modified objects used by all test methods
-        management.call_command('create_superuser', username='admin', password='secret')
+        management.call_command('create_user', username='admin', password='secret')
 
     
     def test_login_redirect(self):
