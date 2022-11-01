@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  web:
+    image: dt_dev_web
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    command: python -u manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./web/app/:/usr/src/app/
+    ports:
+      - "80:8000"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    expose:
+      - 5432
+
+volumes:
+  postgres_data:

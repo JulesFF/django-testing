@@ -1,0 +1,5 @@
+app/media
+app/static
+# python caches
+**/__pycache__
+**/*.pyc

@@ -1,0 +1,24 @@
+{% extends "./base.html" %}
+{% load static %}
+{% load fontawesome_5 %}
+{% load bootstrap4 %}
+{% block title %}Home | {{ block.super }}{% endblock %}
+
+{% block headinfo %}
+{% endblock headinfo %}
+
+{% block content %}
+{% csrf_token %}
+
+
+<!-- Page Content -->
+<div class="">
+    <div class="container pt-3">
+        <div class="jumbotron">
+            <h1 class="display-3">My site</h1>
+            <p>:)</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

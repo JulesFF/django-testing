@@ -1,0 +1,18 @@
+{% extends './base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load fontawesome_5 %}
+{% fontawesome_5_static %}
+{% block title %}Logout : {{ block.super }}{% endblock %}
+{% block navbar %}{% endblock navbar %}
+{% block content %}
+    <div class="jumbotron d-flex align-items-center min-vh-100 mb-0">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <a class="lead" href="{% url 'login' %}">Go to Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock content %}

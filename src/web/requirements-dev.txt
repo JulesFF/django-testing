@@ -1,0 +1,9 @@
+# Development dependencies
+# these packages are not installed in the production image
+
+# for checking licenses of installed components
+pip-licenses
+
+# for code quality checks
+radon
+flake8

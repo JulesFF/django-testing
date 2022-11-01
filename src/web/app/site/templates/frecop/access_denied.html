@@ -1,0 +1,22 @@
+{% extends "site/base.html" %}
+{% load static %}
+{% load fontawesome_5 %}
+{% load site_tags %}
+{% fontawesome_5_static %}
+{% block title %}404 : {{ block.super }}{% endblock %}
+
+{% block headinfo %}
+{% endblock headinfo %}
+
+{% block content %}
+    <div class="container">
+      <div class="jumbotron d-flex align-items-center mt-5">
+        <div class="row">
+          <div class="col">
+            <h1>Accès refusé</h1>
+            <p class="lead text-danger">Désolé, vous n'êtes pas autorisé à accéder à cette source.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

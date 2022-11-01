@@ -1,0 +1,38 @@
+{% extends './base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load fontawesome_5 %}
+{% block title %}Login : {{ block.super }}{% endblock %}
+{% block navbar %}{% endblock navbar %}
+{% block sidenavcontent %}{% endblock sidenavcontent %}
+{% block content %}
+    <div class="jumbotron d-flex align-items-center min-vh-100 mb-0">
+
+      <div class="container">
+        <div class="row">
+          <div id="loginContent" class="col-6 my-auto p-5">
+              <h1 class="mb-5 text-secondary">Login</h1>
+          </div>
+          <div class="col-6 my-auto p-5 text-dark bg-light rounded-lg shadow-lg">
+            {% for message in messages %}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endfor %}
+            <form method="POST">
+              {% csrf_token %}
+              <!--{{ form.as_p }}-->
+              {% bootstrap_form form %}
+              {% buttons %}
+              <button type="submit" class="btn btn-primary">Let's go!</button>
+              {% endbuttons %}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content %}

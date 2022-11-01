@@ -1,0 +1,66 @@
+{% load i18n static %}
+{% load site_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}Site{% endblock %}
+    </title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'site/favicon/short_logo.ico' %}"/>
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    {% block head_bootstrap %}
+      {% load bootstrap4 %}
+      {% bootstrap_css %}
+      {% bootstrap_javascript jquery='full' %}
+    {% endblock head_bootstrap %}
+    {% block head_fontawesome %}
+      {% load fontawesome_5 %}
+      {% fontawesome_5_static %}
+    {% endblock head_fontawesome %}
+    {% block head %}{% endblock %}
+    {% block headinfo %}{% endblock %}
+    
+  </head>
+  <body>
+    {% block navbar %}
+      <nav class="navbar navbar-light bg-light navbar-expand-lg sticky-top" style:"z-index: 1;">
+        <a href="{% url 'home' %}" class="navbar-brand">
+          <img src="{% static 'site/images/logo.png' %}" class="pl-0" height="30px"/>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <ul class="d-flex navbar-nav float-right ml-auto">
+            {% if user.is_staff %}
+              <li class="nav-item ml-3 px-2 border-right">
+                <a class="nav-link" target="_admin" href="{% url 'admin:index' %}">
+                  {% fa5_icon 'cogs' 'fas fa-fw fa-lg' %} Admin
+                </a>
+              </li>
+            {% endif %}
+            <li class="nav-item dropdown px-2 border-right">
+              <a href="{% url 'password-change' %}" class="dropdown-item" >{% fa5_icon 'key' 'fas fa-fw' %} Change password</a>
+            </li>
+            <li class="nav-item px-2 border-right" href="#">
+              <a class="nav-link" href=""> <!-- todo: add profile page -->
+                {% fa5_icon 'user' 'fas fa-fw fa-lg' %}
+                <span class="badge {% user_badge_colour %}">
+                  {% if user.first_name or user.last_name %} {{ user.first_name }} {{user.last_name}} {% else %} {{user.get_username }} {% endif %}
+              </span>
+              </a>
+            </li>
+            <li class="nav-item ml-1">
+              <a class="nav-link" href="{% url 'logout' %}">
+                {% fa5_icon 'sign-out-alt' 'fas fa-fw fa-lg' %} Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    {% endblock navbar %}
+  </body>
+</html>
