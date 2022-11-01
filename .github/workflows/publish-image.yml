@@ -21,19 +21,19 @@ jobs:
 
       - name: Build image
         run: |
-          docker-compose -f src/docker-compose.yml build
+          docker-compose -f ci/docker-compose.yml build
 
       - name: Run django tests
         run: |
-          docker-compose -f src/docker-compose.yml up --detach
-          docker-compose -f src/docker-compose.yml exec -T web coverage run manage.py test -v 2
-          docker-compose -f src/docker-compose.yml exec -T web coverage html
+          docker-compose -f ci/docker-compose.ci.yml up --detach
+          docker-compose -f ci/docker-compose.ci.yml exec -T web coverage run manage.py test -v 2
+          docker-compose -f ci/docker-compose.ci.yml exec -T web coverage html
       
       - name: Upload test results and coverage
         uses: actions/upload-artifact@v3
         with:
           name: coverage
-          path: htmlcov
+          path: coverage
 
   # build-and-push-image:
   #   needs: tests
