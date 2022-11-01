@@ -355,6 +355,6 @@ MigrationBackup/
 # coverage files
 **/coverage/*
 */**/.coverage
-*/coverage.xml
-*/coverage.lcov
+**/coverage.xml
+**/coverage.lcov
 
