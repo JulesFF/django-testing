@@ -76,7 +76,7 @@ jobs:
 
 
 # Allow one concurrent deployment
-:
+
   # Single deploy job since we're just deploying
   deploy:
     needs: build-and-test
