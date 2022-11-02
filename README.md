@@ -94,3 +94,5 @@ Wrote HTML report to htmlcov/index.html
  - optional: enjoy life
  
 All this in a single workflow
+Workflow stuff can be found here (https://github.com/JulesFF/django-testing/actions)
+Coverage report can be found here (https://julesff.github.io/django-testing/)
