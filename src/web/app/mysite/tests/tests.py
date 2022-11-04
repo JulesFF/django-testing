@@ -22,9 +22,9 @@ class LoginRedirect(TestCase):
         response = self.client.post(reverse_lazy('login'), {'username': 'admin', 'password': 'secret'}, follow=True)
         self.assertRedirects(response, reverse_lazy('home'))
 
-    def test_login_redirect_fail(self):
-        """
-        Test that the login page redirects to the login page after a failed login
-        """
-        response = self.client.post(reverse_lazy('login'), {'username': 'admin', 'password': 'wrong'}, follow=True)
-        self.assertRedirects(response, reverse_lazy('login'))
+    # def test_login_redirect_fail(self):
+    #     """
+    #     Test that the login page redirects to the login page after a failed login
+    #     """
+    #     response = self.client.post(reverse_lazy('login'), {'username': 'admin', 'password': 'wrong'}, follow=True)
+    #     self.assertRedirects(response, reverse_lazy('login'))
